@@ -32,7 +32,7 @@ func ShowOrder(db *sql.DB, sc stan.Conn) http.HandlerFunc {
 		order, err := utils.GetOrderByOrderID(orderUID, db)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
-			_, _ = w.Write([]byte("Error while fetching order"))
+			_, _ = w.Write([]byte("There is no order with that UID"))
 			return
 		}
 

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title>Order Details</title>
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p>Order UID: {{.OrderUID}}</p>
+    <p>Track Number: {{.TrackNumber}}</p>
+    
+    <!-- Вывод информации о доставке -->
+    <h2>Delivery Information</h2>
+    <p>Name: {{.Delivery.Name}}</p>
+    <p>Phone: {{.Delivery.Phone}}</p>
+    <p>Zip: {{.Delivery.Zip}}</p>
+    <p>City: {{.Delivery.City}}</p>
+    <p>Address: {{.Delivery.Address}}</p>
+    <p>Region: {{.Delivery.Region}}</p>
+    <p>Email: {{.Delivery.Email}}</p>
+
+    <!-- Вывод информации о платеже -->
+    <h2>Payment Information</h2>
+    <p>Transaction: {{.Payment.Transaction}}</p>
+    <p>RequestID: {{.Payment.RequestID}}</p>
+    <p>Currency: {{.Payment.Currency}}</p>
+    <p>Provider: {{.Payment.Provider}}</p>
+    <p>Amount: {{.Payment.Amount}}</p>
+    <p>PaymentDt: {{.Payment.PaymentDt}}</p>
+    <p>Bank: {{.Payment.Bank}}</p>
+    <p>DeliveryCost: {{.Payment.DeliveryCost}}</p>
+    <p>GoodsTotal: {{.Payment.GoodsTotal}}</p>
+    <p>CustomFee: {{.Payment.CustomFee}}</p>
+
+    <!-- Вывод информации о товарах -->
+    <h2>Items</h2>
+    <ul>
+        {{range .Items}}
+        <li>
+            <p>ChrtID: {{.ChrtID}}</p>
+        </li>
+        <li>
+            <p>TrackNumber: {{.TrackNumber}}</p>
+        </li>
+        <li>
+            <p>Price: {{.Price}}</p>
+        </li>
+        <li>
+            <p>Rid: {{.Rid}}</p>
+        </li>
+        <li>
+            <p>Item Name: {{.Name}}</p>
+        </li>
+        <li>
+            <p>Sale: {{.Sale}}</p>
+        </li>
+        <li>
+            <p>Size: {{.Size}}</p>
+        </li>
+        <li>
+            <p>TotalPrice: {{.TotalPrice}}</p>
+        </li>
+        <li>
+            <p>NmID: {{.NmID}}</p>
+        </li>
+        <li>
+            <p>Brand: {{.Brand}}</p>
+        </li>
+        <li>
+            <p>Status: {{.Status}}</p>
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>
